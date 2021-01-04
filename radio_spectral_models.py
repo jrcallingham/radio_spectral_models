@@ -6,7 +6,7 @@ import scipy.special as special
 import numpy as np
 
 def curve(freq, freq_peak, peakfreq, alphathick, alphathin): # Model taken from Tschager et al. 2003. General fit not based on any physics.
-	return freq_peak/(1 -np.exp(-1))*((nu_peak/freq_peak)**alphathick)*(1 - np.exp(-(nu_peak/freq_peak)**(alphathin-alphathick)))
+	return freq_peak/(1 -np.exp(-1))*((freq/freq_peak)**alphathick)*(1 - np.exp(-(freq/freq_peak)**(alphathin-alphathick)))
 
 def powlaw(freq,a,alpha): # defining powlaw as S = a*nu^-alpha. Important to have x value first in definition of function.
 	return a*(freq**(-alpha))
